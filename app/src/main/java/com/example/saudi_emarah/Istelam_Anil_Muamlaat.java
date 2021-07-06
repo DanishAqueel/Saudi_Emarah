@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +16,13 @@ public class Istelam_Anil_Muamlaat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_istelam_anil_muamlaat);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         Button btn_id_year = findViewById(R.id.button4);
         Button btn_id = findViewById(R.id.button3);
         Frag_ID_Year frag1 = new Frag_ID_Year();
-     fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.container_frag,frag1).commit();
 
         btn_id.setOnClickListener(new View.OnClickListener() {

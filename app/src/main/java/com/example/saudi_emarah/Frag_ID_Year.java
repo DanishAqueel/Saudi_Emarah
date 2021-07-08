@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.chrono.HijrahDate;
 import java.util.ArrayList;
@@ -34,6 +36,7 @@ public class Frag_ID_Year extends Fragment {
     }
     Integer selectedYearIndex = -1;
     Spinner spinner;
+    String cid;
     EditText et;
     private String url_final;
    // @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -41,6 +44,7 @@ public class Frag_ID_Year extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.i("Frag_ID_Year","Inside Frag_ID_Year onCreateView method");
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_frag__i_d__year, container, false);
 
@@ -48,7 +52,7 @@ public class Frag_ID_Year extends Fragment {
 
          spinner = v.findViewById(R.id.spinner);
       //  spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        spinner.setBackgroundColor(Color.WHITE);
+      //  spinner.setBackgroundColor(Color.WHITE);
       //  Locale locale = new Locale("ar_SA");
         HijrahDate hijrahDate = HijrahDate.now();
         String hijDate = hijrahDate.toString();
@@ -85,31 +89,28 @@ public class Frag_ID_Year extends Fragment {
 
         // Getting Id and Year values from EditText and Spinners.
         et = v.findViewById(R.id.editTextTextPersonName);
-       String id=et.getText().toString();
+
 
         Spinner spinner = v.findViewById(R.id.spinner);
         String yearString = yearArray.get(selectedYearIndex);
 
         Button btn2=v.findViewById(R.id.button2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                URL_Generation url_generation = new URL_Generation();
-                url_final =url_generation.getUrl(url_generation.getCodedForm(id),url_generation.getCodedForm(yearString));
-                xmlHandler xmlhandler=new xmlHandler(url_final);
+        btn2.setOnClickListener(view -> {
+            cid = et.getText().toString();
+            Log.i("Frag_ID_Year","Inside Frag_ID_Year onclick method");
+           URL_Generation url_generation = new URL_Generation();
+            url_final =url_generation.getUrl(url_generation.getCodedForm(cid),url_generation.getCodedForm(yearString));
+           // Toast.makeText(getActivity(),"Final URL:"+url_final,Toast.LENGTH_SHORT).show();
+            xmlHandler xmlhandler=new xmlHandler(url_final);
 
 
-                String code=xmlhandler.getCode();
-                String msg= xmlhandler.getMessage();
+            String code=xmlhandler.getCode();
+            String msg= xmlhandler.getMessage();
 
-                Intent intent=new Intent(getContext(),ShowResult.class);
-                intent.putExtra("Key1",code);
-                intent.putExtra("Key2",msg);
-                startActivity(intent);
-
-            }
-
-
+            Intent intent=new Intent(getContext(),ShowResult.class);
+            intent.putExtra("Key1",code);
+            intent.putExtra("Key2",msg);
+            startActivity(intent);
 
         });
         return v;

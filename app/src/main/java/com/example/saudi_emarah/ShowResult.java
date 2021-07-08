@@ -33,6 +33,5 @@ public class ShowResult extends AppCompatActivity {
 
             }
         });
-
     }
 }

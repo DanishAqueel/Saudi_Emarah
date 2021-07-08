@@ -1,17 +1,20 @@
 package com.example.saudi_emarah;
 
-public class URL_Generation {
+import android.util.Log;
+import android.widget.Toast;
 
+public class URL_Generation {
 //Converting id and Year in coded format.
 
     public String getCodedForm(String number) {
+
+        Log.i("URL","Inside URL generation method");
         String[] ids = number.split("");
-        String digitString = null;
-        for (int i = 0; i < ids.length; ++i) {
+        String digitString = "";
+        for (int i = 0; i < ids.length; i++) {
 
             int d = Integer.parseInt(ids[i]);
             switch (d) {
-
                 case 0:
                     digitString = digitString + "+48";
                     break;
@@ -21,11 +24,9 @@ public class URL_Generation {
                 case 2:
                     digitString = digitString + "+50";
                     break;
-
                 case 3:
                     digitString = digitString + "+51";
                     break;
-
                 case 4:
                     digitString = digitString + "+52";
                     break;
@@ -45,7 +46,7 @@ public class URL_Generation {
                     digitString = digitString + "+57";
             }
         }
-        digitString = digitString + "+";
+        //digitString = digitString + "+";
         digitString = digitString.substring(1);
         return digitString;
     }
@@ -54,19 +55,18 @@ public class URL_Generation {
 // Preparing url string.
 
     public String getUrl(String id, String year) {
+        Log.i("URL","Inside getUrl method");
         String url = "";
-        String idString = getCodedForm(id);
-        String yearString = getCodedForm(year);
+        String idString = id;
+        String yearString = year;
         url = "http://eservices.e-najran.gov.sa/webservice_najran/ByKayedWared.aspx?73+78+68+79+67+78+79=" + idString + "&89+69+65+82=" + yearString + "&msgType=1&RETURN=xml";
-
         return url;
     }
-
     public String getUrlFromID(String id) {
+        Log.i("URL","Inside getUrlFromID method");
         String url = "";
-        String digitString = getCodedForm(id);
+        String digitString = id;
         url = "http://eservices.e-najran.gov.sa/webservice_najran/ByCITIZEN_ID.aspx?73+78+68+79+67+78+79=" + digitString + "&msgType=1&RETURN=xml";
-
         return url;
     }
 }

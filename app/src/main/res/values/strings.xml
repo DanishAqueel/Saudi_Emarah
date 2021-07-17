@@ -3,5 +3,27 @@
     <string name="todo">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="phone1">017-522-0000</string>
+    <string name="phone2"> 800-124-0080</string>
+    <string name="mail">info@e-najran.gov.sa</string>
+    <string name="website">www.e-najran.gov.sa</string>
+    <string name="twitter">www.e-najran.gov.sa</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="QeedalWaridHind">المرجو إدخال رقم قيد الوارد</string>
+    <string name="QeedWaridHind">رقم قيد الوارد</string>
+    <string name="IstelamQeedAlWaridText">الاستعلام برقم قيد الوارد</string>
+    <string name="IstelamMuamlatWaridText">الاستعلام عن معاملة واردة</string>
+    <string name="YearText">السنة</string>
+    <string name="AbdalIstelamText">ابدا الاستعلام</string>
+    <string name="ImgContentDescription">TODO</string>
+    <string name="IstelamAnilMuamlatText">الاستعلام عن المعاملات</string>
+    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

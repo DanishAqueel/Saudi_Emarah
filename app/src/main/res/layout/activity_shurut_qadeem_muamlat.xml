@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_main"
+    tools:context=".ShurutQadeemMuamlatActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/titleBarBg">
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:visibility="invisible"
+            android:src="@mipmap/info_logo"/>
+        <ImageView
+            android:id="@+id/image_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_info"/>
+        <TextView
+            android:layout_toLeftOf="@+id/image_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="شروط قديم المعاملات "
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+        <ImageView
+            app:srcCompat="@drawable/ic_back"
+            android:layout_width="46dp"
+            android:layout_centerVertical="true"
+            android:onClick="onBackPress"
+            android:layout_height="46dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/titleBarBg">
+
+        <ImageView
+            android:id="@+id/img_option1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/preparedicon"/>
+        <TextView
+            android:layout_toLeftOf="@+id/img_option1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="استعرعاات عام"
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/titleBarBg">
+
+        <ImageView
+            android:id="@+id/img_option2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/caricon"/>
+        <TextView
+            android:layout_toLeftOf="@+id/img_option2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="الحوادث "
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/titleBarBg">
+
+        <ImageView
+            android:id="@+id/img_option3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/couple"/>
+        <TextView
+            android:layout_toLeftOf="@+id/img_option3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="الزواج "
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/titleBarBg">
+
+        <ImageView
+            android:id="@+id/img_option4"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/preparedicon"/>
+        <TextView
+            android:layout_toLeftOf="@+id/img_option4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="العقار "
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

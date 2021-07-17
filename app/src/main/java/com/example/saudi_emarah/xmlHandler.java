@@ -9,52 +9,51 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class xmlHandler {
 
-    private String code="code";
-    private String message="message";
-    private String urlstring =null;
+    private String msg_code="code";
+    private String msg ="message";
     private XmlPullParserFactory xmlFactroyobject;
     public volatile boolean parsingComplete=true;
-    public xmlHandler(String url){
-        this.urlstring=url;
+    int event;
+    public xmlHandler(){
+
     }
+
     public String getCode(){
-        return code;
+        return msg_code;
     }
     public String getMessage()
     {
-        return message;
+        return msg;
     }
-    public void ParsedXMLdata(XmlPullParser parser) {
 
-        int event;
-        String text = null;
-
+    public void ParsedXMLdata(XmlPullParser xmlPullParser) {
+        Log.i("getXmlDoc","Parsing XML Doc");
         try {
-            event = parser.getEventType();
+            event = xmlPullParser.getEventType();
             while (event != XmlPullParser.END_DOCUMENT) ;
             {
-                String name = parser.getName();
+                String name = xmlPullParser.getName();
                 switch (event) {
                     case XmlPullParser.START_TAG:
                         break;
                     case XmlPullParser.TEXT:
-                        text = parser.getText();
+                        xmlPullParser.getText();
                         break;
                     case XmlPullParser.END_TAG:
-                        if (name.equals(code)) {
-                            code = parser.getAttributeValue(null, "value");
-                        } else if (name.equalsIgnoreCase(message)) {
-                            message = parser.getAttributeValue(null, "value");
+                        if (name.equals("Code")) {
+                            msg_code = xmlPullParser.getText();
+                        } else if (name.equals("Message")) {
+                            msg = xmlPullParser.getText();
                         } else {
                             break;
                         }
-                        event = parser.next();
                 }
+
+                event= xmlPullParser.next();
             }
             parsingComplete = false;
         } catch (Exception e) {
@@ -62,31 +61,29 @@ public class xmlHandler {
         }
 
     }
-    public void getXmlDoc(){
-        Log.i("getXmlDoc","getXmlDoc method invoked");
-        Thread thread=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    URL url=new URL(urlstring);
-                    HttpURLConnection connection= (HttpURLConnection) url.openConnection();
-                    connection.setConnectTimeout(15000);
-                    connection.setReadTimeout(10000);
-                    connection.setRequestMethod("GET");
-                    connection.setDoInput(true);
-                    connection.connect();
+    public void getXmlDoc(String urlstring){
+        Log.i("getXmlDoc","Fetching XML Doc");
+        Thread thread=new Thread(() -> {
+            try {
+                URL url=new URL(urlstring);
+                HttpURLConnection connection= (HttpURLConnection) url.openConnection();
+                connection.setConnectTimeout(15000);
+                connection.setReadTimeout(10000);
+                connection.setRequestMethod("GET");
+                connection.setDoInput(true);
+                connection.connect();
 
-                    InputStream stream=connection.getInputStream();
-                    xmlFactroyobject=XmlPullParserFactory.newInstance();
-                    XmlPullParser parser= xmlFactroyobject.newPullParser();
-                    parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES,false);
-                    parser.setInput(stream,null);
-                    ParsedXMLdata(parser);
-                    stream.close();
-                }
-                catch (IOException | XmlPullParserException e) {
-                    e.printStackTrace();
-                }
+                InputStream stream=connection.getInputStream();
+                xmlFactroyobject=XmlPullParserFactory.newInstance();
+                XmlPullParser parser= xmlFactroyobject.newPullParser();
+                parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES,false);
+                parser.setInput(stream,null);
+                ParsedXMLdata(parser);
+                stream.close();
+
+            }
+            catch (IOException | XmlPullParserException e) {
+                e.printStackTrace();
             }
         });
 

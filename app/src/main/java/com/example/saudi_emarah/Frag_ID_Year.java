@@ -101,8 +101,8 @@ public class Frag_ID_Year extends Fragment {
            URL_Generation url_generation = new URL_Generation();
             url_final =url_generation.getUrl(url_generation.getCodedForm(cid),url_generation.getCodedForm(yearString));
            // Toast.makeText(getActivity(),"Final URL:"+url_final,Toast.LENGTH_SHORT).show();
-            xmlHandler xmlhandler=new xmlHandler(url_final);
-
+            xmlHandler xmlhandler=new xmlHandler();
+            xmlhandler.getXmlDoc(url_final);
 
             String code=xmlhandler.getCode();
             String msg= xmlhandler.getMessage();

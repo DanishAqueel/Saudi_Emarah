@@ -124,13 +124,12 @@
                     android:id="@+id/textView9"
                     android:layout_width="122dp"
                     android:layout_height="50dp"
-
                     android:layout_weight="1"
                     android:autoLink="all"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center|center_vertical"
                     android:soundEffectsEnabled="false"
-                    android:text="@string/phone1"
+                    android:text="@string/phone3"
                     android:textAllCaps="false"
                     android:textColor="#E60000FF" />
 
@@ -138,13 +137,12 @@
                     android:id="@+id/textView10"
                     android:layout_width="122dp"
                     android:layout_height="50dp"
-
                     android:layout_weight="1"
                     android:autoLink="all"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center|center_vertical"
                     android:soundEffectsEnabled="false"
-                    android:text="@string/phone2"
+                    android:text="@string/phone4"
                     android:textAllCaps="false"
 
                     android:textColor="#E60000FF" />

@@ -13,12 +13,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class compose_sms extends AppCompatActivity {
+
 EditText message=findViewById(R.id.editTextTextPersonName5);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_sms);
+
         Button btn_send=findViewById(R.id.button7);
+
+        String s = getIntent().getStringExtra("abc");
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,7 +32,7 @@ EditText message=findViewById(R.id.editTextTextPersonName5);
                 PendingIntent pi=PendingIntent.getActivity(getApplicationContext(),0,msg_intent,0);
 
                 SmsManager smsManager= SmsManager.getDefault();
-                smsManager.sendTextMessage("7705872824",null,msg,pi,null);
+                smsManager.sendTextMessage(s,null,msg,pi,null);
                 Toast.makeText(getApplicationContext(),"Message sent successfully",Toast.LENGTH_SHORT).show();
             }
         });

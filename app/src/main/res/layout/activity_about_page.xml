@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toLeftOf="@+id/image_title"
+                android:layout_toLeftOf="@id/image_title"
                 android:gravity="center_vertical"
                 android:padding="8dp"
                 android:text="حول تطبىق إمارة منطقة نجران"
@@ -125,7 +125,6 @@
                     android:layout_width="122dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:autoLink="all"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center|center_vertical"
                     android:soundEffectsEnabled="false"
@@ -138,7 +137,6 @@
                     android:layout_width="122dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:autoLink="all"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center|center_vertical"
                     android:soundEffectsEnabled="false"
@@ -168,13 +166,9 @@
                     android:layout_height="50dp"
 
                     android:layout_weight="1"
-                    android:autoLink="all"
                     android:fontFamily="sans-serif-medium"
-
                     android:gravity="center|center_vertical"
-                    android:onClick="SendMail"
                     android:soundEffectsEnabled="false"
-
                     android:text="@string/mail"
                     android:textAllCaps="false"
                     android:textColor="#E60000FF" />
@@ -203,9 +197,7 @@
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:autoLink="all"
                     android:gravity="center_horizontal|center_vertical"
-                    android:onClick="GoToWebsite"
                     android:text="@string/website"
                     android:textAllCaps="false"
                     android:textColor="#E60000FF" />
@@ -229,9 +221,7 @@
                     android:layout_width="370dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:autoLink="all"
                     android:gravity="center_horizontal|center_vertical"
-                    android:onClick="GoToTwitter"
                     android:text="@string/twitter"
                     android:textColor="#E60000FF" />
 

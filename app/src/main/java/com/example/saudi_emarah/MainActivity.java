@@ -3,6 +3,8 @@ package com.example.saudi_emarah;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+      requestWindowFeature(Window.FEATURE_NO_TITLE);
+       getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.pager);
         SliderAdapter sliderAdapter = new SliderAdapter(this, this);
@@ -25,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
@@ -55,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             startActivity(new Intent(this,ShurutQadeemMuamlatActivity.class));
         }
+        if(position==2)
+        {
+            startActivity(new Intent(this,AlAkhbar.class));
+        }
+
     }
 
 

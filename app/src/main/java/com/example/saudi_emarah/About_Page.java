@@ -74,20 +74,16 @@ public class About_Page extends AppCompatActivity {
         View lauout1 = findViewById(R.id.relativelayout1);
         View lauout2 = findViewById(R.id.relativelayout2);
 
-        tv1 = findViewById(R.id.textView9);// 8052245732
-        tv2 = findViewById(R.id.textView10); // 7705872824
+       tv1 = findViewById(R.id.textView9);   // 017-522-0000
+        tv2 = findViewById(R.id.textView10); // 800-124-0080
         tv3 = findViewById(R.id.textView11);
         tv4 = findViewById(R.id.textView12);
         tv5 = findViewById(R.id.textView13);
 
         ImageBit = BitmapFactory.decodeResource(getResources(), R.drawable.aboutpage1);
         ((ImageView) imgV).setImageBitmap(ImageBit);
-
-
         RoundedBitmapDrawable RBD = RoundedBitmapDrawableFactory.create(getResources(), ImageBit);
-
         RBD.setCornerRadius(ImageRadius);
-
         RBD.setAntiAlias(true);
         ((ImageView) imgV).setImageDrawable(RBD);
 
@@ -98,18 +94,14 @@ public class About_Page extends AppCompatActivity {
         lauout2.setBackground(gdButton3);
 
         // Create an animation instance
-
         // Animation an = new RotateAnimation(0.0f, 360.0f, pivotX, pivotY);
         ObjectAnimator animation = ObjectAnimator.ofFloat(lauout1, "rotationY", 0.0f, 360f);
         animation.setDuration(500);
-
         animation.setRepeatCount(0);
-//        animation.setInterpolator(new AccelerateDecelerateInterpolator());
+//      animation.setInterpolator(new AccelerateDecelerateInterpolator());
         animation.start();
-
         ObjectAnimator animation1 = ObjectAnimator.ofFloat(lauout2, "rotationY", 360.0f, 0.0f);
         animation1.setDuration(800);
-
         animation1.setRepeatCount(0);
         animation1.setInterpolator(new AccelerateDecelerateInterpolator());
         animation1.start();

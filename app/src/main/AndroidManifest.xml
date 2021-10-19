@@ -9,34 +9,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Saudi_Emarah">
-        <activity android:name=".AlAkhbar"></activity>
+        <activity android:name=".splash_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".tamlik_ghair_saudi_lilsakin" />
+        <activity android:name=".tajdeed_maloomat_isterahat" />
+        <activity android:name=".Fath_Isterahat" />
+        <activity android:name=".Alleqar" />
+        <activity android:name=".Istelam_Anil_Muamlaat" />
+        <activity android:name=".zawaj_biajnabiya_maulood_bilmulk" />
+        <activity android:name=".min_ghair_saudi_muqeem" />
+        <activity android:name=".min_ghair_saudi_maulood_bissaudi" />
+        <activity android:name=".min_ghair_saudi_bilkharij" />
+        <activity android:name=".min_ghair_saudi" />
+        <activity android:name=".Alzawaj" />
+        <activity android:name=".Tarjeel_jasmaan_muqeem" />
+        <activity android:name=".Istedua_Hawadis_Marwiya" />
+        <activity android:name=".Alhawadas" />
+        <activity android:name=".IstedaatAmma" />
+        <activity android:name=".Talab_istadaa" />
+        <activity android:name=".tajdeed_tashreeh_aslaha" />
+        <activity android:name=".An_Al_Imarah" />
+        <activity android:name=".AlAkhbar" />
         <activity android:name=".TestActivity" />
         <activity android:name=".compose_sms" />
         <activity android:name=".About_Page" />
         <activity android:name=".ShurutQadeemMuamlatActivity" />
         <activity android:name=".ShowResult" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Istelam_Anil_Muamlaat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>

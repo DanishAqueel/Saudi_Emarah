@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,6 +35,17 @@
                 android:onClick="onBackPress"
                 app:srcCompat="@drawable/ic_back" />
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                app:srcCompat="@drawable/news" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -48,18 +59,18 @@
                 android:textColorLink="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="15dp"
-                app:srcCompat="@drawable/news"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp" />
         </RelativeLayout>
+
+    <!--    <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_gravity="center"
+            android:progress="100"
+            android:max="3"
+            android:layout_x="130dp"
+            android:layout_y="161dp" /> -->
 
         <WebView
             android:id="@+id/webview"
@@ -69,10 +80,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:alpha="0.9"
-            android:background="@drawable/round_corner"
-            android:clickable="true"
-            android:clipChildren="true" />
+            android:alpha="0.9">
+
+        </WebView>
 
 
     </LinearLayout>

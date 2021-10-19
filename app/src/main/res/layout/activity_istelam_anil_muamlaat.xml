@@ -5,76 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Istelam_Anil_Muamlaat"
-    android:background="@drawable/background_main"
-    >
+    android:background="@drawable/background_main">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="390dp"
-        android:layout_height="102dp"
-        android:alpha="@dimen/material_emphasis_high_type"
-        android:background="#2D6F30"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.136">
 
-        <ImageView
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.065">
+
+    <ImageView
             android:id="@+id/imageView_Back"
             android:layout_width="46dp"
             android:layout_height="46dp"
+            android:layout_marginStart="-12dp"
             android:layout_centerVertical="true"
             android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/ic_back" />
+            app:srcCompat="@drawable/ic_back"
+            android:onClick="onBackPress"
+            android:layout_marginLeft="-12dp" />
+
+    <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/IstelamAnilMuamlatText"
+            android:textColor="#E7FFFFFF"
+            android:textSize="24sp"
+            android:textDirection="rtl"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="80dp"
+            android:textStyle="bold" />
+
 
         <ImageView
-            android:layout_width="54dp"
-            android:layout_height="92dp"
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="6dp"
-            android:layout_marginRight="52dp"
+            android:layout_marginRight="24dp"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/transaction_icon" />
-
     </RelativeLayout>
+
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/fragment_button"
         android:drawablePadding="10dp"
         android:text=" الاستعلام برقم قيد الوارد"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintVertical_bias="0.292" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/fragment_button"
         android:drawablePadding="10dp"
         android:text=" الاستعلام عن معاملة واردة"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <FrameLayout
         android:id="@+id/container_frag"
-        android:layout_width="358dp"
-        android:layout_height="366dp"
-        android:alpha="@dimen/material_emphasis_medium"
+        android:layout_width="349dp"
+        android:layout_height="376dp"
         android:background="#4FA052"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,5 +105,7 @@
         app:layout_constraintVertical_bias="0.731">
 
     </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

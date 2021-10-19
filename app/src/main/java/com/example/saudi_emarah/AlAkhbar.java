@@ -3,9 +3,11 @@ package com.example.saudi_emarah;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 public class AlAkhbar extends AppCompatActivity {
     private WebView webView;
@@ -28,19 +30,21 @@ public class AlAkhbar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_al_akhbar);
 
-        webView = (WebView) findViewById(R.id.webview);
+        webView = findViewById(R.id.webview);
+       // ProgressBar progressBar=findViewById(R.id.progressbar);
      //   webView.getSettings().setAppCacheEnabled(false);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setInitialScale(1);
-        webView.getSettings().setPluginState(WebSettings.PluginState.ON);
+       // webView.getSettings().setJavaScriptEnabled(true);
+       // webView.setInitialScale(1);
+        //webView.getSettings().setPluginState(WebSettings.PluginState.ON);
 
-        webView.setWebViewClient(new WebViewClient() {
+     webView.setWebViewClient(new MyBrowser());
+   /*  {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
             }
-        });
+        });*/
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -53,8 +57,20 @@ public class AlAkhbar extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
 
         //  setContentView(webView);
-        webView.loadUrl("https://www.moi.gov.sa/wps/portal/Home/emirates/najran/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziLQPdnT08TIy83Q0dzQwcPc2N_A08TQ3dPY30wwkpiAJKG-AAjgZA_VFgJc7ujh4m5j4GBhY-7qYGno4eoUGWgcbGBo7GUAV4zAhOLNIvyI0wyDJxVAQAWYyrQQ!!/dz/d5/L2dJQSEvUUt3QS80TmxFL1o2XzBJNDRIMTQySzhGQzUwQVFNMEE3VEIzOEQ0/");
+        webView.loadUrl("https://www.moj.gov.sa");
     }
+    public void onBackPress(View v){
+        onBackPressed();
+    }
+}
+
+ class MyBrowser extends WebViewClient {
+     @Override
+     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+         return false;
+     }
 
 }
+
+
 

@@ -63,16 +63,18 @@
             android:layout_height="54dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/preparedicon"/>
+
         <TextView
-            android:layout_toLeftOf="@+id/img_option1"
+            android:id="@+id/IstedaadAmma"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/img_option1"
             android:gravity="center_vertical"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:padding="8dp"
             android:text="استعرعاات عام"
             android:textColor="@android:color/white"
-            android:padding="8dp"/>
+            android:textSize="22sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 
@@ -92,6 +94,7 @@
             android:layout_centerVertical="true"
             android:src="@mipmap/caricon"/>
         <TextView
+            android:id="@+id/tv_alhawadas"
             android:layout_toLeftOf="@+id/img_option2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -118,16 +121,18 @@
             android:layout_height="54dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/couple"/>
+
         <TextView
-            android:layout_toLeftOf="@+id/img_option3"
+            android:id="@+id/tv_alzawaj"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/img_option3"
             android:gravity="center_vertical"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:padding="8dp"
             android:text="الزواج "
             android:textColor="@android:color/white"
-            android:padding="8dp"/>
+            android:textSize="22sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -146,6 +151,7 @@
             android:layout_centerVertical="true"
             android:src="@mipmap/preparedicon"/>
         <TextView
+            android:id="@+id/Aleqar"
             android:layout_toLeftOf="@+id/img_option4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -11,44 +11,47 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="240dp"
-        android:layout_height="59dp"
-        android:gravity="center"
+        android:hint="رقم قيد الوارد"
+        android:layout_width="189dp"
+        android:layout_height="60dp"
+        android:gravity="center|right"
         android:text="رقم الهوية او الاقامة"
         android:textColor="#306963"
-        android:textSize="22sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintVertical_bias="0.165" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="149dp"
-        android:layout_height="63dp"
-        android:background="@android:drawable/editbox_dropdown_light_frame"
+        android:hint="المرجو ادخال رقم الهوية او الاقامة"
+        android:layout_width="178dp"
+        android:layout_height="46dp"
+        android:background="@drawable/round_corner_spinner"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="292dp"
-        android:layout_height="77dp"
+        android:layout_width="317dp"
+        android:layout_height="52dp"
         android:text="ابدا الاستعلام"
         android:textSize="24sp"
-        app:backgroundTint="#245727"
+        android:textColor="@color/white"
+        app:backgroundTint="#245703"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.891" />
 </androidx.constraintlayout.widget.ConstraintLayout>

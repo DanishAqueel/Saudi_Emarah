@@ -1,11 +1,9 @@
 package com.example.saudi_emarah;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -13,7 +11,6 @@ import androidx.viewpager.widget.ViewPager;
 
 public class SliderAdapter extends PagerAdapter{
     Context mContext;
-    LayoutInflater inflater;
 
     //list of images
 
@@ -34,7 +31,7 @@ public class SliderAdapter extends PagerAdapter{
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == ((ImageView) object);
+        return view == object;
     }
 
     @NonNull

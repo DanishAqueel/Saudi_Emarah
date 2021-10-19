@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
+        ImageView info_btn=findViewById(R.id.info);
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,About_Page.class);
+                startActivity(intent);
+            }
+        });
+
         viewPager = (ViewPager) findViewById(R.id.pager);
         SliderAdapter sliderAdapter = new SliderAdapter(this, this);
         viewPager.setAdapter(sliderAdapter);
@@ -36,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onPageSelected(int position) {
                 Toast.makeText(viewPager.getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-
-
 
             }
 
